@@ -24,7 +24,7 @@ void loop()
   Serial.print(__ardublockAnalogRead(A3));
   Serial.print(" ");
   Serial.println();
-  if (( ( ( __ardublockAnalogRead(A3) ) <= ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) >= ( 15 ) ) ))
+  if (( ( ( __ardublockAnalogRead(A3) ) <= ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) >= ( 1 ) ) ))
   {
     __ardublockDigitalWrite(5, HIGH);
     __ardublockDigitalWrite(6, LOW);
@@ -32,7 +32,7 @@ void loop()
   }
   else
   {
-    if (( ( ( __ardublockAnalogRead(A3) ) > ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) <= ( 30 ) ) ))
+    if (( ( ( __ardublockAnalogRead(A3) ) > ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) <= ( 40 ) ) ))
     {
       __ardublockDigitalWrite(5, HIGH);
       __ardublockDigitalWrite(6, HIGH);
@@ -40,7 +40,7 @@ void loop()
     }
     else
     {
-      if (( ( __ardublockAnalogRead(A3) ) > ( 30 ) ))
+      if (( ( __ardublockAnalogRead(A3) ) > ( 40 ) ))
       {
         __ardublockDigitalWrite(5, HIGH);
         __ardublockDigitalWrite(6, HIGH);
