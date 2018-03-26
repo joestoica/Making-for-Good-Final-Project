@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
 <Pages collapsible-pages="yes" drawer-with-page="yes">
-<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1280">
+<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1680">
 <PageBlocks>
+<Block genus-name="number" id="487">
+<Label>30</Label>
+<Location>
+<X>571</X>
+<Y>168</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="484" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="1007">
+<Label>20</Label>
+<Location>
+<X>571</X>
+<Y>196</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1006" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="1488">
+<Label>40</Label>
+<Location>
+<X>671</X>
+<Y>433</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="1485" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
 <Block genus-name="ifelse" id="521">
 <Location>
 <X>279</X>
@@ -219,7 +249,7 @@
 </Sockets>
 </Block>
 <Block genus-name="number" id="1503">
-<Label>30</Label>
+<Label>40</Label>
 <Location>
 <X>710</X>
 <Y>642</Y>
@@ -364,16 +394,6 @@
 <BlockConnector con-block-id="1488" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
 </Sockets>
 </Block>
-<Block genus-name="number" id="1488">
-<Label>30</Label>
-<Location>
-<X>671</X>
-<Y>433</Y>
-</Location>
-<Plug>
-<BlockConnector con-block-id="1485" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-</Plug>
-</Block>
 <Block genus-name="pin-read-analog" id="1486">
 <Location>
 <X>447</X>
@@ -409,7 +429,7 @@
 </Sockets>
 </Block>
 <Block genus-name="number" id="493">
-<Label>20</Label>
+<Label>30</Label>
 <Location>
 <X>664</X>
 <Y>405</Y>
@@ -466,26 +486,6 @@
 </Location>
 <Plug>
 <BlockConnector con-block-id="1489" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
-</Plug>
-</Block>
-<Block genus-name="number" id="487">
-<Label>20</Label>
-<Location>
-<X>571</X>
-<Y>168</Y>
-</Location>
-<Plug>
-<BlockConnector con-block-id="484" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
-</Plug>
-</Block>
-<Block genus-name="number" id="1007">
-<Label>15</Label>
-<Location>
-<X>571</X>
-<Y>196</Y>
-</Location>
-<Plug>
-<BlockConnector con-block-id="1006" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
 </Plug>
 </Block>
 <Block genus-name="pin-read-analog" id="518">
