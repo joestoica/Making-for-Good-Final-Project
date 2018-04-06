@@ -1,5 +1,7 @@
 #include <HX711.h>
 
+
+
 /*
  Example using the SparkFun HX711 breakout board with a scale
  By: Nathan Seidle
@@ -33,7 +35,12 @@
 
 HX711 scale(DOUT, CLK);
 
-void setup() {
+int __ardublockAnalogRead(int pinNumber) ;
+
+
+
+void setup()
+{
   Serial.begin(9600);
   Serial.println("HX711 scale demo");
 
@@ -41,12 +48,51 @@ void setup() {
   scale.tare(); //Assuming there is no weight on the scale at start up, reset the scale to 0
 
   Serial.println("Readings:");
+  
+
+ 
+
 }
 
-void loop() {
-  Serial.print("Reading: ");
-  Serial.print(scale.get_units(), 1); //scale.get_units() returns a float
-  Serial.print(" lbs"); //You can change this to kg but you'll need to refactor the calibration_factor
-  Serial.println();
-}
+void loop()
+{
+    float _ABVAR_1_Weight = (scale.get_units()) ;
+    Serial.print("Reading: ");
+    Serial.print(_ABVAR_1_Weight); //scale.get_units() returns a float
+    Serial.print(" lbs"); //You can change this to kg but you'll need to refactor the calibration_factor
+    Serial.println();
+    
+    int _ABVAR_2_Red =  ( _ABVAR_1_Weight * 25.5 )  ;
+    int _ABVAR_2_Green =  255 + ( _ABVAR_1_Weight * -25.5) ;
+    
+    if (( (_ABVAR_1_Weight) < ( 0 ) ))
+      { analogWrite ( 9 , 0) ;
+        analogWrite ( 10 , 255) ;
+        analogWrite ( 11 , 255) ;
+      }
+      else
+        {
+           if (( ( (_ABVAR_1_Weight) <= ( 20 ) ) && ( ( _ABVAR_1_Weight ) >= ( 0 ) ) ))
+            { 
+              analogWrite(9 , _ABVAR_2_Red) ;
+              analogWrite (10 , 255 ) ;
+              analogWrite (11 , _ABVAR_2_Green);
+            }
+            else
+              { 
+                if (( ( _ABVAR_1_Weight) > ( 20 ) ))
+                  analogWrite ( 9 , 255 ) ;
+                  analogWrite ( 10 , 255 ) ;
+                  analogWrite ( 11 , 0 ) ;
+              }
+        }
+        }
+     
+    
+  
+
+ 
+  
+
+  
 

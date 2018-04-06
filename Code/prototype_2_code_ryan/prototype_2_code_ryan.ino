@@ -1,59 +1,126 @@
-int __ardublockAnalogRead(int pinNumber)
-{
-  pinMode(pinNumber, INPUT);
-  return analogRead(pinNumber);
-}
-
-
-void __ardublockDigitalWrite(int pinNumber, boolean status)
-{
-  pinMode(pinNumber, OUTPUT);
-  digitalWrite(pinNumber, status);
-}
-
+void Red();
+void RedD();
+void Purple();
+void Blue();
+void TealD();
+void NothingD();
+void Teal();
+void GreenD();
+void PurpleD();
+void BlueD();
+void Nothing();
+void Green();
 
 void setup()
 {
-  Serial.begin(9600);
 }
 
 void loop()
 {
-  Serial.print("message");
-  Serial.print(" ");
-  Serial.print(__ardublockAnalogRead(A3));
-  Serial.print(" ");
-  Serial.println();
-  if (( ( ( __ardublockAnalogRead(A3) ) <= ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) >= ( 1 ) ) ))
-  {
-    __ardublockDigitalWrite(5, HIGH);
-    __ardublockDigitalWrite(6, LOW);
-    __ardublockDigitalWrite(9, LOW);
-  }
-  else
-  {
-    if (( ( ( __ardublockAnalogRead(A3) ) > ( 20 ) ) && ( ( __ardublockAnalogRead(A3) ) <= ( 40 ) ) ))
-    {
-      __ardublockDigitalWrite(5, HIGH);
-      __ardublockDigitalWrite(6, HIGH);
-      __ardublockDigitalWrite(9, LOW);
-    }
-    else
-    {
-      if (( ( __ardublockAnalogRead(A3) ) > ( 40 ) ))
-      {
-        __ardublockDigitalWrite(5, HIGH);
-        __ardublockDigitalWrite(6, HIGH);
-        __ardublockDigitalWrite(9, HIGH);
-      }
-      else
-      {
-        __ardublockDigitalWrite(5, LOW);
-        __ardublockDigitalWrite(6, LOW);
-        __ardublockDigitalWrite(9, LOW);
-      }
-    }
-  }
+  RedD();
+  delay( 1000 );
+  NothingD();
+  delay( 1000 );
+  PurpleD();
+  delay( 1000 );
+  NothingD();
+  delay( 1000 );
+  BlueD();
+  delay( 1000 );
+  NothingD();
+  delay( 1000 );
+  TealD();
+  delay( 1000 );
+  NothingD();
+  delay( 1000 );
+  GreenD();
+  delay( 1000 );
+  NothingD();
+  delay( 1000 );
+}
+
+void Blue()
+{
+  analogWrite(A0 , 255);
+  analogWrite(A1 , 0);
+  analogWrite(A2 , 100);
+}
+
+void PurpleD()
+{
+  analogWrite(3 , 0);
+  analogWrite(5 , 0);
+  analogWrite(6 , 255);
+}
+
+void GreenD()
+{
+  analogWrite(3 , 255);
+  analogWrite(5 , 255);
+  analogWrite(6 , 0);
+}
+
+void Teal()
+{
+  analogWrite(A0 , 255);
+  analogWrite(A1 , 0);
+  analogWrite(A2 , 0);
+}
+
+void BlueD()
+{
+  analogWrite(3 , 255);
+  analogWrite(5 , 0);
+  analogWrite(6 , 255);
+}
+
+void Purple()
+{
+  analogWrite(A0 , 0);
+  analogWrite(A1 , 0);
+  analogWrite(A2 , 255);
+}
+
+void Red()
+{
+  analogWrite(A0 , 0);
+  analogWrite(A1 , 255);
+  analogWrite(A2 , 255);
+}
+
+void RedD()
+{
+  analogWrite(3 , 0);
+  analogWrite(5 , 255);
+  analogWrite(6 , 255);
+}
+
+void Nothing()
+{
+  analogWrite(A0 , 255);
+  analogWrite(A1 , 255);
+  analogWrite(A2 , 255);
+}
+
+void TealD()
+{
+  analogWrite(3 , 255);
+  analogWrite(5 , 0);
+  analogWrite(6 , 0);
+}
+
+void Green()
+{
+  analogWrite(A0 , 255);
+  analogWrite(A1 , 255);
+  analogWrite(A2 , 0);
+}
+
+void NothingD()
+{
+  analogWrite(3 , 255);
+  analogWrite(5 , 255);
+  analogWrite(6 , 255);
 }
 
 
